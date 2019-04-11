@@ -4,15 +4,12 @@ import { connect } from "react-redux";
 import { login } from "../actions";
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      credentials: {
-        username: "",
-        password: ""
-      }
-    };
-  }
+  state = {
+    credentials: {
+      username: "",
+      password: ""
+    }
+  };
 
   handleChanges = e => {
     console.log(this.state.credentials);

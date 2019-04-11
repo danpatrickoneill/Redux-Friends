@@ -6,16 +6,29 @@ import {
   LOGIN_FAILURE,
   FETCH_START,
   FETCH_SUCCESS,
-  FETCH_FAILURE
+  FETCH_FAILURE,
+  ADD_FRIEND_START,
+  ADD_FRIEND_SUCCESS,
+  ADD_FRIEND_FAILURE
 } from "../actions";
 
 const initialState = {
-  friends: []
+  deletingFriend: false,
+  fetchingFriends: false,
+  friends: [],
+  loggingIn: false,
+  savingFriends: false,
+  updatingFriend: false,
+  error: null
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_START: {
+      return {
+        ...state,
+        loggingIn: true
+      };
     }
 
     case LOGIN_SUCCESS: {
@@ -35,6 +48,19 @@ const rootReducer = (state = initialState, action) => {
     }
 
     case FETCH_FAILURE: {
+    }
+
+    case ADD_FRIEND_START: {
+    }
+
+    case ADD_FRIEND_SUCCESS: {
+      return {
+        ...state,
+        friends: action.friends
+      };
+    }
+
+    case ADD_FRIEND_FAILURE: {
     }
 
     default:

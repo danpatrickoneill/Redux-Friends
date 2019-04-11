@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import axiosWithAuth from "../utils/axiosAuth";
+import { types } from "util";
 
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -45,6 +46,28 @@ export const fetchData = () => dispatch => {
       console.log(err);
       dispatch({
         type: FETCH_FAILURE,
+        err
+      });
+    });
+};
+
+export const ADD_FRIEND_START = "ADD_FRIEND_START";
+export const ADD_FRIEND_SUCCESS = "ADD_FRIEND_SUCCESS";
+export const ADD_FRIEND_FAILURE = "ADD_FRIEND_FAILURE";
+
+export const addFriend = friend => dispatch => {
+  dispatch({ type: ADD_FRIEND_START });
+  axiosWithAuth()
+    .post("http://localhost:5000/api/friends", friend)
+    .then(res => {
+      dispatch({
+        type: ADD_FRIEND_SUCCESS,
+        friends: res.data
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: ADD_FRIEND_FAILURE,
         err
       });
     });
