@@ -36,17 +36,17 @@ class FriendsList extends React.Component {
       this.state.newFriend.email
     ) {
       this.props.addFriend(this.state.newFriend);
+      e.target.reset();
+      this.setState({
+        newFriend: {
+          name: "",
+          age: 0,
+          email: ""
+        }
+      });
     } else {
       alert("Please complete form before adding friend");
     }
-    e.target.reset();
-    this.setState({
-      newFriend: {
-        name: "",
-        age: 0,
-        email: ""
-      }
-    });
   };
 
   render() {
