@@ -11,7 +11,18 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavLink to="/login">Login</NavLink>
+          <nav>
+            <NavLink exact to="/">
+              Home
+            </NavLink>
+
+            <NavLink exact to="/friends-list">
+              Friends
+            </NavLink>
+            <NavLink exact to="/login">
+              Login
+            </NavLink>
+          </nav>
           <Route exact path="/" component={null} />
           <Route path="/login" component={Login} />
           <PrivateRoute exact path="/friends-list" component={FriendsList} />

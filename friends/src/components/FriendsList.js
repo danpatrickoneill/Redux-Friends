@@ -64,7 +64,12 @@ class FriendsList extends React.Component {
           );
         })}
         <form onSubmit={this.submitFriend} className="addFriend">
-          <input onChange={this.handleChanges} type="text" name="name" />
+          <input
+            onChange={this.handleChanges}
+            type="text"
+            name="name"
+            placeholder="Name"
+          />
           <select onChange={this.handleChanges} name="age" defaultValue="Age">
             <option>Age</option>
             {ages.map((age, index) => {
@@ -75,7 +80,12 @@ class FriendsList extends React.Component {
               );
             })}
           </select>
-          <input onChange={this.handleChanges} type="text" name="email" />
+          <input
+            onChange={this.handleChanges}
+            type="text"
+            name="email"
+            placeholder="Email"
+          />
           <button>Add Friend</button>
         </form>
       </div>
