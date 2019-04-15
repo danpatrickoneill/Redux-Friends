@@ -19,7 +19,6 @@ class FriendsList extends React.Component {
   }
 
   handleChanges = e => {
-    console.log(this.state.newFriend);
     this.setState({
       newFriend: {
         ...this.state.newFriend,
@@ -31,6 +30,7 @@ class FriendsList extends React.Component {
   submitFriend = e => {
     e.preventDefault();
     if (
+      true &&
       this.state.newFriend.name &&
       this.state.newFriend.age &&
       this.state.newFriend.email
