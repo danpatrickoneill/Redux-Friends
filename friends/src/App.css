@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  color: gray;
+  margin-bottom: 40px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: gray;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: black;
+}
+
+.active {
+  border: 2px solid black;
+}
+
+input {
+  margin: 10px;
+}
